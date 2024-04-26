@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* style.css */
+
+/* Resetting default browser styles */
+html, body, h1, h2, p, button, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.package-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.package-item {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.package-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.package-item h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.package-item p {
+    margin-bottom: 10px;
+}
+
+.package-item .price {
+    font-weight: bold;
+}
+
+.order-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #555;
+}
+
+#order-summary {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#order-summary h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#order-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#order-list li {
+    margin-bottom: 10px;
+}
+
+.clear-cart-button, .checkout-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-cart-button:hover, .checkout-button:hover {
+    background-color: #555;
+}
+
+    </style>
+
+    <title>BonVoyage</title>
+  
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BON VOYAGE TOURS AND TRAVELS</h1>
+            <form action="/logout" method="post">
+                <button type="submit">Logout</button>
+            </form>
+            
+        </header>
+        <div class="package-menu">
+            <div class="package-item" id="Europe">
+                <img src="https://imgs.search.brave.com/VCim7VmANEdC7zN2g7pui21Z5j5U9531fdFXGrKbzzM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy85/LzllL0J1ZGFwZXN0/X1BhcmxhbWVudF9B/ck0uanBn" alt="Europe">
+                <h2>Europe</h2>
+                <p class="details"> This package includes a trip to the European Union including countries like France,Italy,Spain,Portugal and many more!</p>
+                <p class="price">₹2.5lakh onwards</p>
+                <button class="order-button" onclick="orderPackage('Europe', 2.5)">Order Now</button>
+            </div>
+            <div class="package-item" id="India">
+                <img src="https://imgs.search.brave.com/GX9T98hH4dNYdiSnhI98MfFB47DNswrqE3j8HvpF7Vs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9pbmRpYW4tbGFu/ZG1hcmstZ2FkaS1z/YWdhci1yYWphc3Ro/YW5fMTYzNzgyLTM4/MDEuanBnP3NpemU9/NjI2JmV4dD1qcGc" alt="India">
+                <h2>India</h2>
+                <p class="details">A extraordinary journey to India awaits! Includes tours of multiple states all over the country. </p>
+                <p class="price">₹75000 onwards</p>
+                <button class="order-button" onclick="orderPackage('India', 75)">Order Now</button>
+            </div>
+            <div class="package-item" id="Japan">
+                <img src="https://imgs.search.brave.com/_7Hy-ltQdkLMVVo2FxlslLvJrX-abYm5EbsqwD2-obY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MjY0ODEyODA2OTMt/M2JmYTc1NjhlMGYz/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRGOGZH/cGhjR0Z1ZkdWdWZE/QjhmREI4Zkh3dw.jpeg" alt="Japan">
+                <h2>Japan</h2>
+                <p class="details">The cultural country awaits! Multiple cities and districts are included in this package.  </p>
+                <p class="price">₹1.85lakh onwards</p>
+                <button class="order-button" onclick="orderPackage('Japan', 1.85)">Order Now</button>
+            </div>
+            <div class="package-item" id="Australia">
+                <img src="https://imgs.search.brave.com/6DagDqn2ZYs9Jl0diLz2A2fwILUa3eLn4L7vHBBSGHc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTM1/NDU1NDQxL3Bob3Rv/L3ZpZXctb2Ytc3lk/bmV5LWhhcmJvdXIt/YXVzdHJhbGlhLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1v/N3FTaVV2WXpNcDk0/bFlZYjdSMVpVQU1j/RUc1NGJ5WDBiVTNV/WTF6MnNRPQ" alt="Australia">
+                <h2>Australia</h2>
+                <p class="details">Welcome to the Land Down-Under! Visit to the Coastal region and main cities are included.</p>
+                <p class="price">₹2lakh onwards</p>
+                <button class="order-button" onclick="orderPackage('Australia', 2)">Order Now</button>
+            </div>
+            <div class="package-item" id="North-East">
+                <img src="https://imgs.search.brave.com/3qUuwjwkcCvgCHQWPe3wQWjkdza8TX1J-vz5vq9X8Eo/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTUw/MzA5MDAyL3Bob3Rv/L2EtbGl2aW5nLXJv/b3QtYnJpZGdlLWlu/LW1lZ2hhbGF5YS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/ZlV2cVpBdlR5aXZ5/dUZjazVBa3I4WFIx/NXRlbm9FV3pzN3Rv/WkNYZmJ2TT0" alt="North-East">
+                <h2>North-East-The 7 sisters</h2>
+                <p class="price">₹55000 onwards</p>
+                <button class="order-button" onclick="orderPackage('North-East', 55)">Order Now</button>
+            </div>
+            <div class="package-item" id="South">
+                <img src="https://imgs.search.brave.com/_gyxufuxfW3oPQPZiNRIelpyYS7EN_tc7k78Fmp0_U8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE5/Mzg3NjA4Ny9waG90/by9icmloYWRpc3Zh/cmEtdGVtcGxlLXRo/YW5qYXZ1ci10YW1p/bG5hZHUtaW5kaWEu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUpTLVFLazhWZHpN/VklqQVZNWTJaV05D/WVZGMDV2Q2NnWHV1/cm45M0dTdVE9" alt="South">
+                <h2>Down-South</h2>
+                <p class="price">₹40000 onwards</p>
+                <button class="order-button" onclick="orderPackage('South', 40)">Order Now</button>
+            </div>
+            <div class="package-item" id="lakshwadeep">
+                <img src="https://imgs.search.brave.com/O9aCjszRiyw-lPXi30awN_TB-9f5ZfiBgRocSFuoHRM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjc4/MzkxMzExL3Bob3Rv/L2thZGFtYXQtaXNs/YW5kLWxha3NoYWR3/ZWVwLWlzbGFuZHMt/aW5kaWEtaW5kaWFu/LW9jZWFuLWFzaWEu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PWRNV3dIQnE1amdB/Y2tUd0NkQXQyMU5h/Z1VFWWZwWFl4TnB6/SHFWRzd1ZkU9" alt="lakshwadeep">
+                <h2>Lakshwadeep</h2>
+                <p class="price">₹60000 onwards</p>
+                <button class="order-button" onclick="orderPackage('lakshwadeep', 60)">Order Now</button>
+            </div>
+          
+          
+
+        <div id="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-list"></ul>
+            <p id="total-price">Total Price: ₹<span id="total-amount">0.00</span></p>
+            <button class="clear-cart-button" onclick="clearCart()">Clear Cart</button>
+            <button class="checkout-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    <script src="pg2.1.js"></script>
+</body>
+</html>
